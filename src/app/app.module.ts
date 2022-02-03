@@ -9,7 +9,8 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
-
+import { TodoComponent } from './todo/todo.component';
+import { TodoModule } from './todo/todo.module';
 const firebaseConfig = {
   apiKey: "AIzaSyCIpfkclpn5xb0DdDURmyA32V3qT5IS-_E",
   authDomain: "todoionic-bd2e2.firebaseapp.com",
@@ -28,7 +29,7 @@ const firebaseConfig = {
     IonicModule.forRoot(),
     AppRoutingModule,
     AngularFireModule.initializeApp(firebaseConfig),
-    AngularFireDatabaseModule],
+    AngularFireDatabaseModule, TodoModule],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],
 })

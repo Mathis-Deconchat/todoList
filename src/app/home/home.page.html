@@ -3,6 +3,11 @@
     <ion-title>
       Ionic todoList
     </ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="getTasks()">
+        <ion-icon name="refresh" slot="icon-only"></ion-icon>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
@@ -10,6 +15,10 @@
   <div class="bg-img">
     <h1><b>Aujourd'hui</b></h1>
     <h5>{{ currentDate }}</h5>
+
+
+    <app-todo *ngFor="let task of tasks" [task]="task"></app-todo>
+
 
     <ion-card *ngIf="addTask">
       <ion-item lines="none">
